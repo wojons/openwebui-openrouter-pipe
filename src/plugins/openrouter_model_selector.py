@@ -1,7 +1,7 @@
 """
 title: OpenRouter Model Selector
 author: Cline
-version: 0.1.0
+version: 0.1.1
 license: MIT
 description: Integrates OpenRouter model selection into OpenWebUI with a FREE_ONLY filter option
 """
@@ -68,6 +68,9 @@ class Pipe:
         # Remove prefixes if present
         if model_id.startswith(f"{self.id}."):
             model_id = model_id[len(f"{self.id}.") :]
+        elif "." in model_id:
+            # Handle any other prefixes with dot notation
+            model_id = model_id.split(".", 1)[1]
         return model_id
 
     def _handle_response(self, response: requests.Response) -> dict:
