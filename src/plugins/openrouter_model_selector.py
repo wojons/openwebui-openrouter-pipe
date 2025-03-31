@@ -1,7 +1,7 @@
 """
 title: OpenRouter Model Selector
 author: Cline
-version: 0.1.1
+version: 0.1.2
 license: MIT
 description: Integrates OpenRouter model selection into OpenWebUI with a FREE_ONLY filter option
 """
